@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MessageList from './MessageList';
 import dummy_data from './Data';
 
 class App extends Component {
@@ -8,9 +9,9 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Title />
-        <MessageList messages={messages} />
-        <SendMessageList />
+        {/* <Title /> */}
+        <MessageList messages={this.state.messages} />
+        {/* <SendMessageList /> */}
       </div>
     );
   }
