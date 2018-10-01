@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import dummy_data from './Data';
 
 class App extends Component {
   render() {
