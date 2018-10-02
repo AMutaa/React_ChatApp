@@ -9,9 +9,13 @@ const username = 'Adam';
 const roomId = Adam;
 
 class App extends Component {
-  state = {
-    messages: dummy_data,
-  };
+  constructor() {
+    super();
+    this.state = {
+      messages: [],
+    };
+    this.sendMessage = this.sendMessage.bind(this);
+  }
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
       instanceLocator,
@@ -36,12 +40,17 @@ class App extends Component {
     });
   }
 
+  sendMessage(text) {
+    this.currentUser.sendMessage({
+      text,
+      roomId,
+    });
+  }
+
   render() {
     return (
       <div className="app">
-        {/* <Title /> */}
         <MessageList roomId={this.state.roomId} messages={this.state.messages} />
-        {/* <SendMessageList /> */}
       </div>
     );
   }
